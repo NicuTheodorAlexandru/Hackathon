@@ -2,92 +2,92 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/joml-1.9.1-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/joml-1.9.1.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-assimp-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-assimp-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-assimp-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-assimp.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-bgfx-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-bgfx-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-bgfx-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-bgfx.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-egl-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-egl-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-egl.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-glfw-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-glfw-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-glfw-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-glfw.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jawt-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jawt-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jawt.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jemalloc-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jemalloc-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jemalloc-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-jemalloc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-lmdb-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-lmdb-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-lmdb-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-lmdb.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nanovg-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nanovg-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nanovg-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nanovg.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nfd-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nfd-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nfd-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nfd.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nuklear-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nuklear-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nuklear-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-nuklear.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-openal-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-openal-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-openal-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-openal.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opencl-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opencl-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opencl.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengl-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengl-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengl-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengl.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengles-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengles-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengles-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-opengles.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-ovr-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-ovr-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-ovr-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-ovr.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-par-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-par-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-par-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-par.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-sse-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-sse-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-sse-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-sse.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-stb-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-stb-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-stb-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-stb.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-tinyfd-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-tinyfd-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-tinyfd-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-tinyfd.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-vulkan-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-vulkan-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-vulkan.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-xxhash-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-xxhash-natives-windows.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-xxhash-sources.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl-xxhash.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/lwjgl.jar"/>
-	<classpathentry kind="lib" path="/Project 4X World/libraries/PNGDecoder.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/joml-1.9.1-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/joml-1.9.1.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-assimp-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-assimp-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-assimp-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-assimp.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-bgfx-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-bgfx-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-bgfx-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-bgfx.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-egl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-egl-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-egl.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-glfw-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-glfw-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-glfw-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-glfw.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jawt-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jawt-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jawt.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jemalloc-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jemalloc-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jemalloc-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-jemalloc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-lmdb-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-lmdb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-lmdb-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-lmdb.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nanovg-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nanovg-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nanovg-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nanovg.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nfd-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nfd-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nfd-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nfd.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nuklear-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nuklear-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nuklear-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-nuklear.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-openal-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-openal-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-openal-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-openal.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opencl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opencl-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opencl.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengl-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengl-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengl-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengl.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengles-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengles-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengles-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-opengles.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-ovr-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-ovr-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-ovr-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-ovr.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-par-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-par-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-par-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-par.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-sse-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-sse-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-sse-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-sse.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-stb-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-stb-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-stb-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-stb.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-tinyfd-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-tinyfd-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-tinyfd-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-tinyfd.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-vulkan-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-vulkan-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-vulkan.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-xxhash-javadoc.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-xxhash-natives-windows.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-xxhash-sources.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl-xxhash.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/lwjgl.jar"/>
+	<classpathentry kind="lib" path="/Project-4X/libraries/PNGDecoder.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -31,7 +31,9 @@ public class MenuHUD
 	
 	public void render()
 	{
-		
+		newGame.render();
+		loadGame.render();
+		exitGame.render();
 	}
 	
 	public MenuHUD()

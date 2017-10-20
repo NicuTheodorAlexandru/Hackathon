@@ -1,11 +1,18 @@
 package main;
 
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
+
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.glfw.GLFWImage;
 import org.lwjgl.glfw.GLFWVidMode;
 import org.lwjgl.opengl.GL11;
+import org.lwjgl.stb.STBImage;
+import org.lwjgl.system.MemoryUtil;
 
 import misc.Defines;
 import misc.Settings;
+import misc.Utils;
 
 public class Window 
 {
@@ -14,6 +21,19 @@ public class Window
 	private long windowID;
 	private String title;
 	private GLFWVidMode vidmode;
+	private long cursor;
+	
+	public void setImage(String filename)
+	{
+		IntBuffer w = MemoryUtil.memAllocInt(1);
+		IntBuffer h = MemoryUtil.memAllocInt(1);
+		IntBuffer comp = MemoryUtil.memAllocInt(1);
+		ByteBuffer png = Utils.ioResourceToByteBuffer(filename, 64 * 1024);
+		ByteBuffer pixels = STBImage.stbi_load_from_memory(png, w, h, comp, 0);
+		GLFWImage image = GLFWImage.malloc().set(w.get(0), h.get(0), pixels);
+		cursor = GLFW.glfwCreateCursor(image, 0, 8);
+		GLFW.glfwSetCursor(windowID, cursor);
+	}
 	
 	public long getID()
 	{

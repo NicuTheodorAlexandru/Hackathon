@@ -13,7 +13,7 @@ public class guiButton
 	private float y;
 	private float width;
 	private float height;
-	private float maxHeight, maxWidth;
+	private float maxHeight;
 	private float currentHeight;
 	private guiList list;
 	private guiSprite sprite;
@@ -116,14 +116,33 @@ public class guiButton
 		{
 			sprite.render();
 		}
+		else if(list != null)
+		{
+			currentHeight = list.getHeight();
+			maxHeight = list.getCurrentHeight();
+			float ratio = maxHeight / currentHeight;
+			height = currentHeight / ratio;
+			if(height > currentHeight)
+				height = currentHeight;
+			NanoVG.nvgBeginPath(Main.vg);
+			NVGColor color = NVGColor.create();
+			color.a(1.0f);
+			color.b(0.0f);
+			color.r(0.0f);
+			color.g(0.0f);
+			NanoVG.nvgRect(Main.vg, x, y, width, height);
+			NanoVG.nvgFillColor(Main.vg, color);
+			NanoVG.nvgFill(Main.vg);
+		}
 	}
 	
-	public guiButton(float x, float y, guiList list)
+	public guiButton(float x, float y, float width, guiList list)
 	{
 		pressed = activated = false;
 		this.x = x;
 		this.y = y;
 		this.list = list;
+		this.width = width;
 		height = 0;
 		this.currentHeight = list.getCurrentHeight();
 	}

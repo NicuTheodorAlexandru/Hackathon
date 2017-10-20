@@ -1,6 +1,7 @@
 package main;
 
 import org.lwjgl.glfw.GLFW;
+import org.lwjgl.nanovg.NanoVG;
 import org.lwjgl.nanovg.NanoVGGL2;
 import org.lwjgl.opengl.GL;
 import org.lwjgl.opengl.GL11;
@@ -15,6 +16,7 @@ import misc.Assets;
 import misc.Defines;
 import misc.Misc;
 import misc.Settings;
+import sound.SoundListener;
 import sound.SoundManager;
 
 public class Main 
@@ -54,8 +56,10 @@ public class Main
 		camera = new Camera();
 		renderer = new Renderer();
 		soundManager = new SoundManager();
+		soundManager.setListener(new SoundListener());
 		level = null;
 		menuHud = new MenuHUD();
+		window.setImage("/images/cursor.png");
 		
 		timer = new Timer();
 		timer.init();
@@ -91,7 +95,8 @@ public class Main
 		GLFW.glfwTerminate();
 		renderer.cleanup();
 		soundManager.cleanup();
-		level.cleanup();
+		if(level != null)
+			level.cleanup();
 	}
 	
 	public void start()
@@ -104,7 +109,11 @@ public class Main
 	
 	private void render()
 	{
+		flags();
 		window.clear();
+		NanoVG.nvgSave(vg);
+		float pixelRatio = window.getWidth() / window.getHeight();
+		NanoVG.nvgBeginFrame(Main.vg, window.getWidth(), window.getHeight(), pixelRatio);
 		
 		if(level != null)
 			level.render();
@@ -112,13 +121,16 @@ public class Main
 			menuHud.render();
 		
 		renderer.render();
+		NanoVG.nvgEndFrame(vg);
+		NanoVG.nvgRestore(vg);
 		window.render();
 	}
 	
 	private void update()
 	{
 		window.update();
-		Mouse.update();
+		keyboard.update();
+		mouse.input();
 		Misc.update();
 		
 		if(level != null)
@@ -141,8 +153,6 @@ public class Main
 		{
 			if(window.shouldClose())
 				running = false;
-			mouse.input();
-			keyboard.update();
 			
 			elapsedTime = (float)timer.getElapsedTime();
 			accumulator += elapsedTime;

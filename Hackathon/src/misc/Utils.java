@@ -119,7 +119,6 @@ public class Utils
 			inr = new InputStreamReader(in, "UTF-8");
 		} catch (UnsupportedEncodingException e1)
 		{
-			// TODO Auto-generated catch block
 			System.err.println(e1);
 		}
 		BufferedReader br = new BufferedReader(inr);
