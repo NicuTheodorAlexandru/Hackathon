@@ -3,7 +3,6 @@ package level;
 import entities.Entity;
 import graphics.Renderer;
 import graphics.Sprite;
-import gui.guiTooltip;
 
 public class Resource 
 {
@@ -11,17 +10,21 @@ public class Resource
 	private float resourceAmount;
 	private boolean depleted;
 	private Sprite sprite;
-	private guiTooltip amountLeft;
+	
+	public Sprite getSprite()
+	{
+		return sprite;
+	}
 	
 	public void update()
 	{
-		amountLeft.update();
+		if(harvestAmount <= 0)
+			depleted = true;
 	}
 	
 	public void render()
 	{
 		Renderer.models.add(sprite.getModel());
-		amountLeft.render();
 	}
 	
 	public boolean getDepleted()

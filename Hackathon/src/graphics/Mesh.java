@@ -23,6 +23,7 @@ public class Mesh
 	private Vector3f maxPos;
 	private Vector4f color;
 	private Texture sprite;
+	public float height;
 	
 	public void setMaxPos(Vector3f maxPos)
 	{
@@ -57,7 +58,8 @@ public class Mesh
 	{
 		Vector3f length = new Vector3f();
 		length.x = maxPos.x - minPos.x;
-		length.y = maxPos.y - minPos.y;
+		//length.y = maxPos.y - minPos.y;
+		length.y = height;
 		length.z = maxPos.z - minPos.z;
 		return length;
 	}

@@ -26,8 +26,7 @@ public class Renderer
 		shaderProgram.setUniform("projectionMatrix", projectionMatrix);
 		
 		shaderProgram.setUniform("textureSampler", 0);
-		
-		int i = 0;
+
 		for(Model model: models)
 		{
 			Mesh mesh = model.getMesh();

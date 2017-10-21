@@ -1,7 +1,6 @@
 package graphics;
 
 import org.joml.Vector3f;
-
 import input.Keyboard;
 import misc.Settings;
 
@@ -29,7 +28,6 @@ public class Camera
         }
         
         movePosition(cameraInc);
-        //moveRotation();
 	}
 	
 	public void movePosition(Vector3f movePosition)
@@ -43,8 +41,8 @@ public class Camera
             position.z += (float)Math.cos(Math.toRadians(rotation.y - 90)) * movePosition.x;
         }
         position.y += movePosition.y;
-        if(position.y <= -4.0f)
-        	position.y = -4.0f;
+        if(position.y <= 0.0f)
+        	position.y = 0.0f;
 	}
 	
 	private float simplifyRotation(float value)
@@ -94,7 +92,7 @@ public class Camera
 	
 	public Camera()
 	{
-		position = new Vector3f(0, -3, -20.0f);
+		position = new Vector3f(0, 0, -10);
 		rotation = new Vector3f(0, 180, 0);
 	}
 }

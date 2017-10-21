@@ -2,10 +2,8 @@ package level;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.joml.Vector3f;
 import org.lwjgl.openal.AL11;
-
 import entities.Entity;
 import entities.MotherTree;
 import graphics.HUD;
@@ -13,9 +11,7 @@ import graphics.Renderer;
 import graphics.Sprite;
 import graphics.Texture;
 import main.Main;
-import sound.SoundBuffer;
 import sound.SoundListener;
-import sound.SoundSource;
 
 public class Level 
 {
@@ -32,7 +28,32 @@ public class Level
 		int frame = Main.frames % 35;
 		frame /= 5;
 		bck = background[frame];
-		bck.getModel().setPosition(new Vector3f(Main.camera.getPosition().x - 32F, Main.camera.getPosition().y + 13F, 0));
+		bck.getModel().setPosition(new Vector3f(Main.camera.getPosition().x - 14, Main.camera.getPosition().y - 6, 0));
+	}
+	
+	public Resource getClosestResource(Vector3f pos)
+	{
+		float closest = Float.POSITIVE_INFINITY;
+		Resource res = null;
+		
+		for(Resource r: resources)
+		{
+			float dist = r.getSprite().getModel().getPosition().x - pos.x;
+			if(dist < 0)
+				dist *= -1;
+			if(dist < closest)
+			{
+				closest = dist;
+				res = r;
+			}
+		}
+		
+		return res;
+	}
+	
+	public Resource getLastResource()
+	{
+		return resources.get(resources.size() - 1);
 	}
 	
 	public void addResource(Resource res)
@@ -68,11 +89,16 @@ public class Level
 	public void render()
 	{
 		Renderer.models.add(bck.getModel());
-		player.render();
 		for(int i = 0; i < blocks.size(); i++)
 		{
 			Block block = blocks.get(i);
 			block.render();
+		}
+		player.render();
+		for(int i = 0; i < resources.size(); i++)
+		{
+			Resource res = resources.get(i);
+			res.render();
 		}
 		for(int i = 0; i < entities.size(); i++)
 		{
@@ -97,6 +123,11 @@ public class Level
 				entities.remove(entity);
 			}
 		}
+		for(int i = 0; i < resources.size(); i++)
+		{
+			Resource res = resources.get(i);
+			res.update();
+		}
 		for(int i = 0; i < blocks.size(); i++)
 		{
 			Block block = blocks.get(i);
@@ -119,13 +150,16 @@ public class Level
 		for(int i = 1; i <= amount; i++)
 		{
 			this.addBlock(new Block(new Sprite(new Texture("/images/sprDirt.png")), true));
-			blocks.get(blocks.size() - 1).setPosition(new Vector3f(x, -13.8f, 0));
+			blocks.get(blocks.size() - 1).setPosition(new Vector3f(x, -6, 0));
 			x += blocks.get(blocks.size() - 1).getSprite().getModel().getSize();
 			//x += 3.0f;
 		}
+		
+		resources.add(new Resource(new Sprite(new Texture("/images/sprResource.png")), 0.1f, 1000.0f));
+		this.getLastResource().getSprite().getModel().setPosition(new Vector3f(-10, 0, 0));
 	}
 	
-	private void setupSounds()
+	/*private void setupSounds()
 	{
 		SoundBuffer buffer = new SoundBuffer("/art/Demon-Hunter-Someone-To-Hate.ogg");
 		Main.soundManager.addSoundBuffer(buffer);
@@ -134,7 +168,7 @@ public class Level
 		source.setBuffer(buffer.getBufferID());
 		Main.soundManager.addSoundSource("Music", source);
 		Main.soundManager.playSoundSource("Music");
-	}
+	}*/
 	
 	public Level()
 	{
@@ -151,11 +185,11 @@ public class Level
 		background[6] = new Sprite(new Texture("/images/bck7.png"));
 		background[7] = new Sprite(new Texture("/images/bck8.png"));
 		for(int i = 0; i <= 7; i++)
-			background[i].getModel().setScale(1.7f);
+			background[i].getModel().setScale(0.8f);
 		bck = background[0];
 		genWorld();
 		player = new MotherTree(new Sprite(new Texture("/images/sprMotherTree.png")), 100, 10, 1, 0);
-		player.setPosition(new Vector3f(0, 0, 0));
+		player.setPosition(new Vector3f(0, -4, 0));
 		Main.soundManager.setListener(new SoundListener(new Vector3f(0, 0, 0)));
 		Main.soundManager.setAttenuationModel(AL11.AL_EXPONENT_DISTANCE);
 		hud = new HUD();

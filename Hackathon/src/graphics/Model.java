@@ -8,7 +8,8 @@ public class Model
 	private final Vector3f position;
 	private final Vector3f rotation;
 	private float size;
-	private Vector3f scale;
+	public Vector3f scale;
+	public Vector3f origin;
 	private boolean selected;
 	
 	public void setMesh(Mesh mesh)
@@ -151,5 +152,6 @@ public class Model
 		position = new Vector3f(0, 0, 0);
 		rotation = new Vector3f(0, 0, 0);
 		scale = new Vector3f(mesh.getLength());
+		origin = new Vector3f(scale.x, scale.y, 0);
 	}
 }

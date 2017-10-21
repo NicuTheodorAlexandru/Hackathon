@@ -15,6 +15,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.joml.Vector3f;
 import org.lwjgl.nanovg.NanoVG;
 import org.lwjgl.system.MemoryUtil;
 
@@ -22,6 +23,17 @@ import main.Main;
 
 public class Utils 
 {
+	public static float distance(Vector3f pos1, Vector3f pos2)
+	{
+		float dist = 0.0f;
+		
+		float x = (pos2.x - pos1.x) * (pos2.x - pos1.x);
+		float y = (pos2.y - pos1.y) * (pos2.y - pos1.y);
+		dist = (float)(Math.sqrt(x + y));
+		
+		return dist;
+	}
+	
 	private static ByteBuffer resizeBuffer(ByteBuffer buffer, int newCapacity) 
 	{
         ByteBuffer newBuffer = MemoryUtil.memAlloc(newCapacity);

@@ -28,10 +28,10 @@ public class Sprite
 			};
 		float[] texCoords = 
 			{
-					0.0f, 0.0f, 0.0f,
-					base, 0.0f, 0.0f,
-					base, base, 0.0f,
 					0.0f, base, 0.0f,
+					base, base, 0.0f,
+					base, 0.0f, 0.0f,
+					0.0f, 0.0f, 0.0f,
 			};
 		float[] normals = 
 			{
@@ -42,12 +42,12 @@ public class Sprite
 			};
 		int[] indices = 
 			{
+				0, 2, 3,	
 				0, 1, 2,
-				0, 2, 3,
 			};
 		model = new Model(new Mesh(positions, texCoords, normals, indices));
-		model.rotateX(180);
 		model.getMesh().setTexture(texture);
+		//model.rotateX(180);
 	}
 	
 	public Model getModel()

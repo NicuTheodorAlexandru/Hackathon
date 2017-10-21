@@ -33,6 +33,14 @@ public class guiTooltip
 		this.text.setText(text);
 	}
 	
+	public void setBox(float x, float y, float width, float height)
+	{
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
+	
 	public void render()
 	{
 		if(!active)

@@ -11,6 +11,11 @@ public class MotherTree extends Entity
 	private float essence;
 	private float saplingCost;
 	
+	public void deposit(float amount)
+	{
+		essence += amount;
+	}
+	
 	public float getEssence()
 	{
 		return essence;
@@ -21,8 +26,8 @@ public class MotherTree extends Entity
 		if(essence >= saplingCost)
 		{
 			essence -= saplingCost;
-			Main.level.addEntity(new Tree(new Sprite(new Texture("/images/sprCone.png")), 1, 0, 0.5f, 0.1f));
-			Main.level.getLastEntity().setPosition(new Vector3f(4, 0, 0));
+			Main.level.addEntity(new Tree(new Sprite(new Texture("/images/sprCone.png")), 1, 0, 0.5f, 0.01f));
+			Main.level.getLastEntity().setPosition(new Vector3f(4, -4, 0));
 		}
 	}
 	
