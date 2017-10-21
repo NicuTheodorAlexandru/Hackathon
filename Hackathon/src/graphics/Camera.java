@@ -2,6 +2,9 @@ package graphics;
 
 import org.joml.Vector3f;
 
+import input.Keyboard;
+import misc.Settings;
+
 public class Camera
 {
 	private final Vector3f position;
@@ -9,7 +12,7 @@ public class Camera
 	
 	public void update()
 	{
-		/*Vector3f cameraInc = new Vector3f(0, 0, 0);
+		Vector3f cameraInc = new Vector3f(0, 0, 0);
 		
         if(Keyboard.getKey(Settings.moveLeft)) 
         {
@@ -25,8 +28,8 @@ public class Camera
             cameraInc.y = Settings.cameraSpeed;
         }
         
-        //movePosition(cameraInc);
-        //moveRotation();*/
+        movePosition(cameraInc);
+        //moveRotation();
 	}
 	
 	public void movePosition(Vector3f movePosition)
@@ -89,7 +92,7 @@ public class Camera
 	
 	public Camera()
 	{
-		position = new Vector3f(0, 0, -4.0f);
+		position = new Vector3f(0, -3, -20.0f);
 		rotation = new Vector3f(0, 180, 0);
 	}
 }

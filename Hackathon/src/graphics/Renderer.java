@@ -14,35 +14,10 @@ public class Renderer
 	public static final float Z_FAR = 1000.0f;
 	public static Transformation transformation;
 	private ShaderProgram shaderProgram;
-	private ShaderProgram shaderHUD;
 	public static List<Model> models;
 	public static List<Model> huds;
 	public static Matrix4f projectionMatrix;
 	public static Matrix4f viewMatrix;
-	private void renderHUD()
-	{
-		shaderHUD.bind();
-		
-		//shaderHUD.setUniform("textureSampler", 0);
-		Matrix4f ortho = transformation.getOrthoProjectionMatrix(0, 
-				Main.window.getWidth(), Main.window.getHeight(), 0);
-		
-		for(Model model: huds)
-		{
-			Mesh mesh = model.getMesh();
-			int hasTexture = 0;
-			if(mesh.getTexture() != null)
-				hasTexture = 1;
-			
-			Matrix4f projModelMatrix = transformation.buildOrtoProjModelMatrix(model, ortho);
-			shaderHUD.setUniform("colour", mesh.getColor());
-			shaderHUD.setUniform("hasTexture", hasTexture);
-			shaderHUD.setUniform("projModelMatrix", projModelMatrix);
-			mesh.render();
-		}
-		
-		shaderHUD.unbind();
-	}
 	
 	private void renderModels()
 	{
@@ -67,22 +42,7 @@ public class Renderer
 			
 			mesh.render();
 		}
-		
 		shaderProgram.unbind();
-	}
-
-	private void initShaderHUD()
-	{
-		shaderHUD = new ShaderProgram();
-		
-		shaderHUD.createVertexShader(Utils.loadFileAsText("/shaders/hud.vs"));
-		shaderHUD.createFragmentShader(Utils.loadFileAsText("/shaders/hud.fs"));
-		shaderHUD.link();
-		
-		shaderHUD.createUniform("projModelMatrix");
-		//shaderHUD.createUniform("textureSampler");
-		shaderHUD.createUniform("colour");
-		shaderHUD.createUniform("hasTexture");
 	}
 	
 	private void initShaderProgram()
@@ -103,7 +63,6 @@ public class Renderer
 	public void cleanup()
 	{
 		shaderProgram.cleanup();
-		shaderHUD.cleanup();
 	}
 	
 	public void render()
@@ -114,7 +73,7 @@ public class Renderer
 				Main.window.getHeight(), Z_NEAR, Z_FAR));
 		viewMatrix = transformation.getViewMatrix(Main.camera, viewMatrix);
 		renderModels();
-		renderHUD();
+		//renderHUD();
 	}
 	
 	public void clear()
@@ -126,7 +85,6 @@ public class Renderer
 	public void init()
 	{
 		initShaderProgram();
-		initShaderHUD();
 	}
 	
 	public Renderer()

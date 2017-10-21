@@ -14,7 +14,7 @@ public class Settings
 	//keys
 	public static int moveLeft = GLFW.GLFW_KEY_A;
 	public static int moveRight = GLFW.GLFW_KEY_D;
-	public static int moveUp = GLFW.GLFW_KEY_A;
+	public static int moveUp = GLFW.GLFW_KEY_W;
 	public static int moveDown = GLFW.GLFW_KEY_S;
 	public static int sprint = GLFW.GLFW_KEY_LEFT_SHIFT;
 	public static int jump = GLFW.GLFW_KEY_SPACE;

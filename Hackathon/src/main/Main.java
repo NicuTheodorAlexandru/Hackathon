@@ -59,7 +59,6 @@ public class Main
 		soundManager.setListener(new SoundListener());
 		level = null;
 		menuHud = new MenuHUD();
-		window.setImage("/images/cursor.png");
 		
 		timer = new Timer();
 		timer.init();
@@ -109,12 +108,11 @@ public class Main
 	
 	private void render()
 	{
-		flags();
 		window.clear();
 		NanoVG.nvgSave(vg);
 		float pixelRatio = window.getWidth() / window.getHeight();
 		NanoVG.nvgBeginFrame(Main.vg, window.getWidth(), window.getHeight(), pixelRatio);
-		
+		flags();
 		if(level != null)
 			level.render();
 		else
