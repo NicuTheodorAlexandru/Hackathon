@@ -12,7 +12,10 @@ import graphics.Renderer;
 import graphics.Sprite;
 import graphics.Texture;
 import main.Main;
+import sound.SoundBuffer;
 import sound.SoundListener;
+import sound.SoundSource;
+import structures.Wall;
 
 public class Level 
 {
@@ -20,6 +23,7 @@ public class Level
 	private List<Entity> entities;
 	private List<Block> blocks;
 	private List<Resource> resources;
+	private List<Wall> walls;
 	public MotherTree player;
 	private Sprite[] background;
 	private Sprite bck;
@@ -34,6 +38,11 @@ public class Level
 		frame /= 5;
 		bck = background[frame];
 		bck.getModel().setPosition(new Vector3f(Main.camera.getPosition().x - 14, Main.camera.getPosition().y - 6, 0));
+	}
+	
+	public void addWall(Wall wall)
+	{
+		walls.add(wall);
 	}
 	
 	public Entity getClosestEnemy(Vector3f pos)
@@ -142,6 +151,11 @@ public class Level
 			Block block = blocks.get(i);
 			block.render();
 		}
+		for(int i = 0; i < walls.size(); i++)
+		{
+			Wall w = walls.get(i);
+			w.render();
+		}
 		player.render();
 		for(int i = 0; i < resources.size(); i++)
 		{
@@ -171,6 +185,11 @@ public class Level
 				i--;
 				entities.remove(entity);
 			}
+		}
+		for(int i = 0; i < walls.size(); i++)
+		{
+			Wall w = walls.get(i);
+			w.update();
 		}
 		for(int i = 0; i < resources.size(); i++)
 		{
@@ -227,16 +246,16 @@ public class Level
 		this.getLastResource().getSprite().getModel().setPosition(new Vector3f(-10, 0, 0));
 	}
 	
-	/*private void setupSounds()
+	private void setupSounds()
 	{
-		SoundBuffer buffer = new SoundBuffer("/art/Demon-Hunter-Someone-To-Hate.ogg");
+		SoundBuffer buffer = new SoundBuffer("/art/song.ogg");
 		Main.soundManager.addSoundBuffer(buffer);
 		SoundSource source = new SoundSource(true, false);
 		source.setPosition(new Vector3f(0, 0, 0));
 		source.setBuffer(buffer.getBufferID());
 		Main.soundManager.addSoundSource("Music", source);
 		Main.soundManager.playSoundSource("Music");
-	}*/
+	}
 	
 	public Level()
 	{
@@ -245,6 +264,7 @@ public class Level
 		gracePeriod = 5000;
 		entities = new ArrayList<>();
 		blocks = new ArrayList<>();
+		walls = new ArrayList<>();
 		resources = new ArrayList<>();
 		background = new Sprite[8];
 		background[0] = new Sprite(new Texture("/images/bck1.png"));
@@ -264,6 +284,6 @@ public class Level
 		Main.soundManager.setListener(new SoundListener(new Vector3f(0, 0, 0)));
 		Main.soundManager.setAttenuationModel(AL11.AL_EXPONENT_DISTANCE);
 		hud = new HUD();
-		//setupSounds();
+		setupSounds();
 	}
 }
