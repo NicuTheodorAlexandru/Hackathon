@@ -112,7 +112,6 @@ public class Main
 		NanoVG.nvgSave(vg);
 		float pixelRatio = window.getWidth() / window.getHeight();
 		NanoVG.nvgBeginFrame(Main.vg, window.getWidth(), window.getHeight(), pixelRatio);
-		flags();
 		if(level != null)
 			level.render();
 		else
@@ -136,6 +135,8 @@ public class Main
 		else
 			menuHud.update();
 		soundManager.updateListener(camera);
+		
+		Mouse.update();
 	}
 	
 	private void run()

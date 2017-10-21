@@ -27,6 +27,7 @@ public class Renderer
 		
 		shaderProgram.setUniform("textureSampler", 0);
 		
+		int i = 0;
 		for(Model model: models)
 		{
 			Mesh mesh = model.getMesh();
@@ -74,6 +75,7 @@ public class Renderer
 		viewMatrix = transformation.getViewMatrix(Main.camera, viewMatrix);
 		renderModels();
 		//renderHUD();
+		clear();
 	}
 	
 	public void clear()

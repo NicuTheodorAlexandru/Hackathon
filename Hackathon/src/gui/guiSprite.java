@@ -22,14 +22,12 @@ public class guiSprite
 	
 	public void render()
 	{
-		//NanoVG.nvgSave(Main.vg);
 		NVGPaint paint = NVGPaint.create();
 		NanoVG.nvgImagePattern(Main.vg, x, y, width, height, 0.0f, imageHandle, alpha, paint);
 		NanoVG.nvgBeginPath(Main.vg);
 		NanoVG.nvgRect(Main.vg, x, y, width, height);
 		NanoVG.nvgFillPaint(Main.vg, paint);
 		NanoVG.nvgFill(Main.vg);
-		//NanoVG.nvgRestore(Main.vg);
 	}
 	
 	public void changeY(float value)

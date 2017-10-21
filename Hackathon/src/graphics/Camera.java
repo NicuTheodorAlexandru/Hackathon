@@ -43,6 +43,8 @@ public class Camera
             position.z += (float)Math.cos(Math.toRadians(rotation.y - 90)) * movePosition.x;
         }
         position.y += movePosition.y;
+        if(position.y <= -4.0f)
+        	position.y = -4.0f;
 	}
 	
 	private float simplifyRotation(float value)

@@ -2,12 +2,23 @@ package level;
 
 import org.joml.Vector3f;
 
+import graphics.Renderer;
 import graphics.Sprite;
 
 public class Block 
 {
 	private boolean solid;
 	private Sprite sprite;
+	
+	public void update()
+	{
+		
+	}
+	
+	public void render()
+	{
+		Renderer.models.add(sprite.getModel());
+	}
 	
 	public void setPosition(Vector3f position)
 	{

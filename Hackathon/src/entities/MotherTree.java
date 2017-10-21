@@ -1,6 +1,9 @@
 package entities;
 
+import org.joml.Vector3f;
+
 import graphics.Sprite;
+import graphics.Texture;
 import main.Main;
 
 public class MotherTree extends Entity
@@ -8,12 +11,18 @@ public class MotherTree extends Entity
 	private float essence;
 	private float saplingCost;
 	
+	public float getEssence()
+	{
+		return essence;
+	}
+	
 	public void plantTree()
 	{
 		if(essence >= saplingCost)
 		{
 			essence -= saplingCost;
-			Main.level.addEntity(new Tree(sprite, essence, essence, essence, essence));
+			Main.level.addEntity(new Tree(new Sprite(new Texture("/images/sprCone.png")), 1, 0, 0.5f, 0.1f));
+			Main.level.getLastEntity().setPosition(new Vector3f(4, 0, 0));
 		}
 	}
 	
@@ -21,5 +30,6 @@ public class MotherTree extends Entity
 	{
 		super(sprite, health, defence, damage, speed);
 		essence = 10.0f;
+		saplingCost = 5.0f;
 	}
 }

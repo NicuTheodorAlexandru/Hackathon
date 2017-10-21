@@ -7,11 +7,21 @@ import graphics.Sprite;
 public class Entity 
 {
 	protected Sprite sprite;
+	protected float carry;
+	protected float carryLimit;
 	protected float health;
 	protected float damage;
 	protected float defence;
 	protected float speed;
 	protected boolean dead;
+	
+	public float carry(float amount)
+	{
+		if(amount > carryLimit - carry)
+			amount = carryLimit - carry;
+		carry += carryLimit;
+		return amount;
+	}
 	
 	public void damage(float value)
 	{
@@ -98,5 +108,7 @@ public class Entity
 		this.defence = defence;
 		this.speed = speed;
 		dead = false;
+		carry = 0.0f;
+		carryLimit = 1.0f;
 	}
 }
