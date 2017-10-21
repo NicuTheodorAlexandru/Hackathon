@@ -36,5 +36,6 @@ public class MotherTree extends Entity
 		super(sprite, health, defence, damage, speed);
 		essence = 10.0f;
 		saplingCost = 5.0f;
+		this.id = "mothertree";
 	}
 }

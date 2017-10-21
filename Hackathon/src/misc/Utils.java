@@ -23,6 +23,16 @@ import main.Main;
 
 public class Utils 
 {
+	public static float dist(float x1, float x2)
+	{
+		float dist = x2 - x1;
+		
+		if(dist < 0)
+			dist *= -1;
+		
+		return dist;
+	}
+	
 	public static float distance(Vector3f pos1, Vector3f pos2)
 	{
 		float dist = 0.0f;

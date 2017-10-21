@@ -5,6 +5,7 @@ import java.util.List;
 import org.joml.Vector3f;
 import org.lwjgl.openal.AL11;
 import entities.Entity;
+import entities.Lumberjack;
 import entities.MotherTree;
 import graphics.HUD;
 import graphics.Renderer;
@@ -22,6 +23,10 @@ public class Level
 	public MotherTree player;
 	private Sprite[] background;
 	private Sprite bck;
+	private int enemies;
+	private long lastSpawn;
+	private int enemiesToSpawn;
+	private long gracePeriod;
 	
 	private void background()
 	{
@@ -29,6 +34,49 @@ public class Level
 		frame /= 5;
 		bck = background[frame];
 		bck.getModel().setPosition(new Vector3f(Main.camera.getPosition().x - 14, Main.camera.getPosition().y - 6, 0));
+	}
+	
+	public Entity getClosestEnemy(Vector3f pos)
+	{
+		float closest = Float.POSITIVE_INFINITY;
+		Entity entity = null;
+		
+		for(Entity e: entities)
+		{
+			if(e.getID() != "lumberjack")
+				continue;
+			float dist = e.getPosition().x - pos.x;
+			if(dist < 0)
+				dist *= -1;
+			if(dist < closest)
+			{
+				closest = dist;
+				entity = e;
+			}
+		}
+		return entity;
+	}
+	
+	public Entity getClosestForest(Vector3f pos)
+	{
+		float closest = Float.POSITIVE_INFINITY;
+		Entity entity = null;
+		
+		for(Entity e: entities)
+		{
+			if(e.getID() != "mothertree" && e.getID() != "tree")
+				continue;
+			float dist = e.getPosition().x - pos.x;
+			if(dist < 0)
+				dist *= -1;
+			if(dist < closest)
+			{
+				closest = dist;
+				entity = e;
+			}
+		}
+		
+		return entity;
 	}
 	
 	public Resource getClosestResource(Vector3f pos)
@@ -113,6 +161,7 @@ public class Level
 	{
 		Main.camera.update();
 		background();
+		spawnEnemies();
 		for(int i = 0; i < entities.size(); i++)
 		{
 			Entity entity = entities.get(i);
@@ -136,6 +185,25 @@ public class Level
 		hud.update();
 	}
 	
+	private void spawnEnemies()
+	{
+		float startingX = 50f;
+		
+		if(lastSpawn + gracePeriod < Main.frame)
+		{
+			if(Main.frame % 100 == 0)
+			{
+				Main.level.addEntity(new Lumberjack(new Vector3f(startingX, -6f, 0)));
+				enemiesToSpawn--;
+			}
+		}
+		if(enemiesToSpawn == 0)
+		{
+			lastSpawn = Main.frame;
+			enemies++;
+			enemiesToSpawn = enemies;
+		}
+	}
 	
 	public void addBlock(Block block)
 	{
@@ -172,6 +240,9 @@ public class Level
 	
 	public Level()
 	{
+		lastSpawn = Main.frame;
+		enemies = 0;
+		gracePeriod = 5000;
 		entities = new ArrayList<>();
 		blocks = new ArrayList<>();
 		resources = new ArrayList<>();

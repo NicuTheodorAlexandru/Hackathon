@@ -5,12 +5,28 @@ import graphics.Sprite;
 import graphics.Texture;
 import level.Resource;
 import main.Main;
+import misc.Utils;
 
 public class Tree extends Entity
 {
 	private int level;
 	private long frame;
 	private long growTime;
+	
+	private void attack()
+	{
+		Entity target = Main.level.getClosestEnemy(this.getPosition());
+		
+		if(target == null)
+			return;
+		
+		if(Utils.dist(this.getPosition().x, target.getPosition().x) < 2.0f)
+		{
+			super.attack(target);
+		}
+		else
+			super.moveTowardsEntity(target);
+	}
 	
 	public int getLevel()
 	{
@@ -76,6 +92,10 @@ public class Tree extends Entity
 	
 	public void update()
 	{
+		System.out.println(health);
+		if(health <= 0)
+			super.dead = true;
+		attack();
 		if(level > 1)
 			gatherResources();
 		if(frame + growTime < Main.frame)
@@ -87,9 +107,11 @@ public class Tree extends Entity
 	
 	private void grow()
 	{
+		if(level >= 4)
+			return;
 		this.health += 5.0f;
-		this.defence += 0.5f;
-		this.damage += 1.5f;
+		this.defence += 0.1f;
+		this.damage += 0.5f;
 		this.speed += 0.01f;
 		level++;
 		growTime += growTime / 2;
@@ -116,5 +138,6 @@ public class Tree extends Entity
 		level = 1;
 		growTime = 300;
 		frame = Main.frame;
+		id= "tree";
 	}	
 }

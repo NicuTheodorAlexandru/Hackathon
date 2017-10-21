@@ -6,6 +6,7 @@ import graphics.Sprite;
 
 public class Entity 
 {
+	protected String id;
 	protected Sprite sprite;
 	protected float carry;
 	protected float carryLimit;
@@ -14,6 +15,11 @@ public class Entity
 	protected float defence;
 	protected float speed;
 	protected boolean dead;
+	
+	protected void attack(Entity entity)
+	{
+		entity.damage(this.damage);
+	}
 	
 	public float carry(float amount)
 	{
@@ -55,29 +61,16 @@ public class Entity
 	
 	protected void moveTowardsEntity(Entity entity)
 	{
-		Vector3f targetPos = entity.getPosition();
-		Vector3f pos = this.getPosition();
-		Vector3f dir = new Vector3f(targetPos.x - pos.x, targetPos.y - pos.y, targetPos.z - pos.z);
-		Vector3f mov = new Vector3f(0, 0, 0);
-		if(dir.x != 0)
+		float mov = entity.getPosition().x - this.getPosition().x;
+		
+		if(mov < 0)
 		{
-			if(dir.x > 0)
-				mov.x += speed;
-			else
-				mov.x -= speed;
+			this.move(new Vector3f(-speed, 0, 0));
 		}
-		if(dir.y != 0)
+		else
 		{
-			if(dir.y > 0)
-				mov.y += speed;
-			else 
-				mov.y -= speed;
+			this.move(new Vector3f(speed, 0, 0));
 		}
-	}
-	
-	protected void attack(Entity entity)
-	{
-		entity.damage(damage);
 	}
 	
 	public void render()
@@ -100,8 +93,14 @@ public class Entity
 		return sprite;
 	}
 	
+	public String getID()
+	{
+		return id;
+	}
+	
 	public Entity(Sprite sprite, float health, float defence, float damage, float speed)
 	{
+		id = "null";
 		this.sprite = sprite;
 		this.health = health;
 		this.damage = damage;
